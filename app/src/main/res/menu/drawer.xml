@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/home"
+            android:checked="true"
+            android:icon="@drawable/home"
+            android:title="@string/nav_home_page" />
+        <item
+            android:id="@+id/passenger_profile"
+            android:checked="false"
+            android:icon="@drawable/profile"
+            android:title="@string/nav_passenger_profile" />
+        <item
+            android:id="@+id/travelHistory"
+            android:checked="false"
+            android:icon="@drawable/place_point"
+            android:title="@string/travelHistory" />
+        <item
+            android:id="@+id/logout"
+            android:checked="false"
+            android:icon="@drawable/exit"
+            android:title="@string/log_out" />
+    </group>
+
+</menu>

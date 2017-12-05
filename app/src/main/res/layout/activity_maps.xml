@@ -1,0 +1,205 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mapsFrame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.itproject.piczon.loudoms.passengerbusartery.MapsActivity"
+        tools:layout="@layout/dummy_map" />
+
+    <RelativeLayout
+        android:id="@+id/mapsRelativeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/relative_layout_background"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/edtOrigin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/origin_pinpoint"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/origin_pinpoint"
+            android:hint="@string/origin"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/edtDestination"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edtOrigin"
+            android:drawableLeft="@drawable/destination_pinpoint"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/destination_pinpoint"
+            android:hint="@string/destination"
+            android:inputType="textPersonName" />
+
+        <LinearLayout
+            android:id="@+id/linear"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edtDestination"
+            android:background="@color/gray"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/edtNumberOfSeats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/numberOfSeats"
+                android:inputType="number" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/txtBusType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/Accommodation"
+                    android:textSize="12sp" />
+
+                <RadioGroup
+                    android:id="@+id/rgBusType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/rbOrdinary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/ordinary" />
+
+                    <RadioButton
+                        android:id="@+id/rbAircon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="@string/Aircon" />
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/txtDirection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/direction"
+                    android:textSize="12sp" />
+
+                <RadioGroup
+                    android:id="@+id/rgDirection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/rbSouth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/south" />
+
+                    <RadioButton
+                        android:id="@+id/rbNorth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="@string/north" />
+
+                </RadioGroup>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative_trip_info_display"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="60dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:visibility="invisible"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/titleEstFare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_estimated_fare" />
+
+        <TextView
+            android:id="@+id/valueEstFare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/value_est_fare"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/titleEstTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titleEstFare"
+            android:text="@string/title_estimated_time" />
+
+        <TextView
+            android:id="@+id/valueEstTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/value_est_time"
+            android:layout_below="@+id/valueEstFare"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/titleEstDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titleEstTime"
+            android:text="@string/title_estimated_distance" />
+
+        <TextView
+            android:id="@+id/valueEstDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/value_est_distance"
+            android:textStyle= "bold"
+            android:layout_below="@+id/valueEstTime"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btnBookATrip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titleEstDistance"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/button_background"
+        android:text="@string/bookTrip" />
+
+</FrameLayout>
